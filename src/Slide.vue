@@ -1,6 +1,6 @@
 <template>
   <div class="VueCarousel-slide" tabindex="-1">
-    <slot></slot>
+    <slot/>
   </div>
 </template>
 

@@ -16,20 +16,20 @@
           padding-right: ${padding}px;
         `"
       >
-        <slot></slot>
+        <slot/>
       </div>
     </div>
     <pagination
       v-if="paginationEnabled && pageCount > 0"
       @paginationclick="goToPage($event, 'pagination')"
-    ></pagination>
+    />
     <navigation
       v-if="navigationEnabled"
       :clickTargetSize="navigationClickTargetSize"
       :nextLabel="navigationNextLabel"
       :prevLabel="navigationPrevLabel"
       @navigationclick="handleNavigation"
-    ></navigation>
+    />
   </section>
 </template>
 
@@ -91,9 +91,9 @@ export default {
       type: Number,
       default: 8
     },
-    /*
-       * Flag to toggle mouse dragging
-       */
+    /**
+     * Flag to toggle mouse dragging
+     */
     mouseDrag: {
       type: Boolean,
       default: true
@@ -212,9 +212,9 @@ export default {
       type: Number,
       default: 0
     },
-    /*
-       *  Stage padding option adds left and right padding style (in pixels) onto VueCarousel-inner.
-       */
+    /**
+     *  Stage padding option adds left and right padding style (in pixels) onto VueCarousel-inner.
+     */
     spacePadding: {
       type: Number,
       default: 0
@@ -332,7 +332,7 @@ export default {
   methods: {
     /**
      * @return {Number} The index of the next page
-     * */
+     */
     getNextPage() {
       if (this.currentPage < this.pageCount - 1) {
         return this.currentPage + 1;
@@ -341,7 +341,7 @@ export default {
     },
     /**
      * @return {Number} The index of the previous page
-     * */
+     */
     getPreviousPage() {
       if (this.currentPage > 0) {
         return this.currentPage - 1;
@@ -469,7 +469,6 @@ export default {
      * Trigger actions when mouse is released
      * @param  {Object} e The event object
      */
-
     onEnd(e) {
       // compute the momemtum speed
       const eventPosX = this.isTouch ? e.changedTouches[0].clientX : e.clientX;
@@ -544,7 +543,7 @@ export default {
       }, this.refreshRate);
     },
     render() {
-      // add extra slides depending on the momemtum speed
+      // add extra slides depending on the momentum speed
       this.offset +=
         Math.max(
           -this.currentPerPage + 1,

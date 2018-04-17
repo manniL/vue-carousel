@@ -17,7 +17,6 @@
       >
         <button
           type="button"
-          role="button"
           class="VueCarousel-dot-button"
           :tabindex="index"
           :style="`
@@ -25,7 +24,7 @@
             height: ${parentContainer.paginationSize}px;
             background: ${isCurrentDot(index) ? parentContainer.paginationActiveColor : parentContainer.paginationColor};
           `"
-        ></button>
+        />
       </li>
     </ul>
   </div>
